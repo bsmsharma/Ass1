@@ -1,0 +1,297 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Skill Assessment Dashboard</title>
+  <link rel="stylesheet" href="style.css">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body>
+  <!-- Header -->
+  <!-- Header -->
+<!-- <header class="header">
+  <div class="header-left">
+    <img src="image/bics_logo.png" alt="Company Logo" class="logo">
+    <h1 class="company-name"></h1>
+  </div>
+  <div class="header-right"> -->
+ <header>
+ <nav class="navbar navbar-expand-lg navbar-light bg-light">
+  <div class="container-fluid">
+    <a class="navbar-brand" href="#">Navbar w/ text</a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarText" aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarText">
+      
+      <span class="navbar-text">
+        Navbar text with an inline element
+      </span>
+    </div>
+  </div>
+</nav>
+
+
+     
+  </div>
+</header>
+
+
+  <!-- Main Layout -->
+  <div class="d-flex">
+   
+     <!-- <img src="image/bics_logo.png" width="250px" height="250px"> -->
+    <div class="sidebar bg-light p-3">
+      <button class="btn btn-outline-dark w-100 mb-2" onclick="showDashboard()">Dashboard</button>
+      <button class="btn btn-outline-dark w-100" onclick="showAssessment()">Assessment</button>
+    </div>
+
+    <!-- Content Area -->
+    <div class="content flex-grow-1 p-4">
+      <!-- Dashboard Section -->
+      <div id="dashboardSection">
+        <h3>Dashboard Overview</h3>
+        <p>Welcome! Use the sidebar to navigate to assessments.</p>
+      </div>
+
+      <!-- Assessment Section -->
+      <div id="assessmentSection" style="display:none;">
+        <div class="d-flex justify-content-between mb-3">
+          <h3>Assessment Records</h3>
+          <button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#assessmentModal">➕ Add</button>
+        </div>
+
+   <table class="table table-bordered text-center">
+  <thead class="table-dark">
+    <tr>
+      <th>Intern Name</th>
+      <th>Domain</th>
+      <th>Mentor</th>
+      
+      <th>Overall Score</th>
+      <th>Assessment</th>
+      <th>Actions</th>
+    </tr>
+  </thead>
+  <tbody id="assessmentTableBody">
+    <!-- Rows will be added dynamically -->
+  </tbody>
+</table>
+
+      </div>
+    </div>
+  </div>
+
+<!-- View Modal -->
+<div class="modal fade" id="viewModal" tabindex="-1" aria-hidden="true">
+  <div class="modal-dialog modal-lg">
+    <div class="modal-content shadow-lg rounded-3">
+      <div class="modal-header bg-primary text-white">
+        <h5 class="modal-title">Assessment Details</h5>
+        <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal"></button>
+      </div>
+      <div class="modal-body">
+        <table class="table table-bordered">
+          <tbody id="viewTableBody">
+            <!-- Data will be inserted dynamically -->
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+</div>
+
+  <!-- Modal Form -->
+   <div class="modal fade" id="assessmentModal" tabindex="-1" aria-hidden="true">
+  <div class="modal-dialog modal-xl">
+    <div class="modal-content shadow-lg rounded-3">
+      <div class="modal-header bg-dark text-white">
+        <h5 class="modal-title">Skill Assessment Form</h5>
+        <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal"></button>
+      </div>
+  <form id="assessmentForm" class="p-3">
+        <div class="modal-body">
+          <div class="row g-4">
+        
+        <div class="row g-3 mb-4">
+          <div class="col-md-6">
+              <label for="internName" class="form-label fw-bold">Intern Name</label>
+              <input type="text" id="internName" name="internName" class="form-control form-control-lg" placeholder="Enter intern's full name" required>
+            </div>
+             <div class="col-md-6">
+              <label for="domain" class="form-label fw-bold">Domain</label>
+              <input type="text" id="domain" name="domain" class="form-control form-control-lg" placeholder="e.g. Web Development, Data Science" required>
+            </div>
+
+             <div class="col-md-6">
+              <label for="mentorName" class="form-label fw-bold">Mentor Name</label>
+              <input type="text" id="mentorName" name="mentorName" class="form-control form-control-lg" placeholder="Enter mentor's name" required>
+            </div>
+
+             <div class="col-md-6">
+              <label for="assessmentNo" class="form-label fw-bold">Assessment</label>
+              <select id="assessmentNo" name="assessmentNo" class="form-select form-select-lg" required>
+                <option value="">Select Assessment</option>
+                <option>Assessment 1</option>
+                <option>Assessment 2</option>
+                <option>Assessment 3</option>
+              </select>
+            </div>
+
+
+             <div class="col-md-6">
+              <label for="assessmentTopic" class="form-label fw-bold">Assessment Topic</label>
+              <input type="text" id="assessmentTopic" name="assessmentTopic" class="form-control form-control-lg" placeholder="Enter assessment topic">
+            </div>
+
+              <div class="col-md-6">
+              <label for="assessmentDate" class="form-label fw-bold">Assessment Date</label>
+              <input type="date" id="assessmentDate" name="assessmentDate" class="form-control form-control-lg">
+            </div>
+        </div>
+
+        <!-- ✅ Original Fields (unchanged) -->
+        <div class="row g-3">
+            <div class="col-md-6">
+                <label for="technical" class="form-label">
+                    Technical Skills
+                    <span class="tooltip-icon" data-bs-toggle="tooltip" title="Ability to use technical tools, software, and methods effectively.">ℹ️</span>
+                </label>
+                <select id="technical" name="technical" class="form-select">
+                    <option value="">Select Score</option>
+                    <option>0</option><option>1</option><option>2</option>
+                    <option>3</option><option>4</option><option>5</option>
+                </select>
+            </div>
+
+            <div class="col-md-6">
+                <label for="analytical" class="form-label">
+                    Analytical Skills
+                    <span class="tooltip-icon" data-bs-toggle="tooltip" title="Ability to analyze data, identify patterns, and solve problems logically.">ℹ️</span>
+                </label>
+                <select id="analytical" name="analytical" class="form-select">
+                    <option value="">Select Score</option>
+                    <option>0</option><option>1</option><option>2</option>
+                    <option>3</option><option>4</option><option>5</option>
+                </select>
+            </div>
+
+            <div class="col-md-6">
+                <label for="troubleshooting" class="form-label">
+                    Troubleshooting
+                    <span class="tooltip-icon" data-bs-toggle="tooltip" title="Ability to detect, diagnose, and resolve issues quickly.">ℹ️</span>
+                </label>
+                <select id="troubleshooting" name="troubleshooting" class="form-select">
+                    <option value="">Select Score</option>
+                    <option>0</option><option>1</option><option>2</option>
+                    <option>3</option><option>4</option><option>5</option>
+                </select>
+            </div>
+
+            <div class="col-md-6">
+                <label for="verbal" class="form-label">
+                    Verbal Communication
+                    <span class="tooltip-icon" data-bs-toggle="tooltip" title="Ability to express ideas clearly in spoken form.">ℹ️</span>
+                </label>
+                <select id="verbal" name="verbal" class="form-select">
+                    <option value="">Select Score</option>
+                    <option>0</option><option>1</option><option>2</option>
+                    <option>3</option><option>4</option><option>5</option>
+                </select>
+            </div>
+
+            <div class="col-md-6">
+                <label for="written" class="form-label">
+                    Written Communication
+                    <span class="tooltip-icon" data-bs-toggle="tooltip" title="Ability to convey ideas effectively in written form.">ℹ️</span>
+                </label>
+                <select id="written" name="written" class="form-select">
+                    <option value="">Select Score</option>
+                    <option>0</option><option>1</option><option>2</option>
+                    <option>3</option><option>4</option><option>5</option>
+                </select>
+            </div>
+
+            <div class="col-md-6">
+                <label for="collaboration" class="form-label">
+                    Collaboration
+                    <span class="tooltip-icon" data-bs-toggle="tooltip" title="Ability to work effectively in a team environment.">ℹ️</span>
+                </label>
+                <select id="collaboration" name="collaboration" class="form-select">
+                    <option value="">Select Score</option>
+                    <option>0</option><option>1</option><option>2</option>
+                    <option>3</option><option>4</option><option>5</option>
+                </select>
+            </div>
+
+            <div class="col-md-6">
+                <label for="time" class="form-label">
+                    Time Management
+                    <span class="tooltip-icon" data-bs-toggle="tooltip" title="Ability to organize tasks and meet deadlines efficiently.">ℹ️</span>
+                </label>
+                <select id="time" name="time" class="form-select">
+                    <option value="">Select Score</option>
+                    <option>0</option><option>1</option><option>2</option>
+                    <option>3</option><option>4</option><option>5</option>
+                </select>
+            </div>
+
+            <div class="col-md-6">
+                <label for="ethic" class="form-label">
+                    Work Ethic
+                    <span class="tooltip-icon" data-bs-toggle="tooltip" title="Commitment to doing your job to the best of your ability.">ℹ️</span>
+                </label>
+                <select id="ethic" name="ethic" class="form-select">
+                    <option value="">Select Score</option>
+                    <option>0</option><option>1</option><option>2</option>
+                    <option>3</option><option>4</option><option>5</option>
+                </select>
+            </div>
+
+            <div class="col-md-6">
+                <label for="strength" class="form-label">
+                    Strength
+                    <span class="tooltip-icon" data-bs-toggle="tooltip" title="Your strong points or skills you excel at.">ℹ️</span>
+                </label>
+                <select id="strength" name="strength" class="form-select">
+                    <option value="">Select Score</option>
+                    <option>0</option><option>1</option><option>2</option>
+                    <option>3</option><option>4</option><option>5</option>
+                </select>
+            </div> 
+
+            <div class="col-md-6">
+                <label for="improvement" class="form-label">
+                    Area for Improvement
+                    <span class="tooltip-icon" data-bs-toggle="tooltip" title="Skills or areas that need development.">ℹ️</span>
+                </label>
+                <select id="improvement" name="improvement" class="form-select">
+                    <option value="">Select Score</option>
+                    <option>0</option><option>1</option><option>2</option>
+                    <option>3</option><option>4</option><option>5</option>
+                </select>
+
+          <div class="col-12">
+  <label for="remarks" class="form-label">Remarks</label>
+  <textarea id="remarks" name="remarks" class="form-control" rows="3" placeholder="Enter remarks or feedback"></textarea>
+</div>
+            </div>
+        </div>
+          </div>
+        </div>
+      
+        
+
+      <div class="modal-footer">
+          <button type="submit" class="btn btn-success">Submit</button>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>
+
+  <script src="script.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
