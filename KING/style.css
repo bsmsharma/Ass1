@@ -1,0 +1,111 @@
+
+    .form-container {
+        max-width: 800px;
+        margin: auto;     
+      
+}
+    h1 {
+        font-weight: 600;
+        margin-bottom: 30px;
+    }
+    .form-label {
+        font-weight: 500;
+        margin-bottom: 5px;
+    }
+    .form-select, .form-control {
+        background-color: #f1f3f5;
+        border: 1px solid #dee2e6;
+        border-radius: 8px;
+        padding: 10px;
+    }
+    button {
+        padding: 10px 25px;
+        border-radius: 8px;
+        font-weight: 500;
+    }
+    .form-select {
+        padding: 0.25rem 0.5rem;
+        height: auto;
+        font-size: 0.85rem !important;
+    }
+    /* Make dropdown options smaller too */
+    .form-select option {
+        font-size: 0.85rem !important;
+    }
+
+.sidebar {
+   background: url('/image/v331batch2-nunny-05-leafbackground.jpg') no-repeat center center fixed;
+   background-size: cover;
+  width: 220px;
+  min-height: 100vh;
+  border-right: 1px solid #dddddd62;
+}
+
+.content {
+  background: white;
+  border-radius: 5px;
+}
+
+
+/* General Modal Styling */
+.modal-content {
+  border-radius: 12px;
+  box-shadow: 0 6px 20px rgba(0,0,0,0.2);
+}
+
+.form-label {
+  font-weight: 500;
+}
+
+hr {
+  opacity: 0.3;
+}
+
+.btn {
+  border-radius: 8px; 
+}
+/* Header styling */
+.header {
+    display: flex
+;
+    justify-content: space-between;
+    align-items: center;
+    background: linear-gradient(90deg, #a10d754d, #1976d2);
+    color: white;
+    padding: 15px 30px;
+}
+
+.header-left {
+  display: flex;
+  align-items: center;
+}
+
+.logo {
+    height: 57px;
+    margin-right: 30px;
+    width: 230px;
+}
+
+
+.company-name {
+  font-size: 20px;
+  font-weight: 700;
+  margin: 0;
+}
+
+.company-name span {
+  display: block;
+  font-size: 12px;
+  font-weight: 400;
+  opacity: 0.9;
+}
+
+.header-right .dashboard-title {
+  font-size: 18px;
+  font-weight: 600;
+  margin: 0;
+}
+
+
+
+
